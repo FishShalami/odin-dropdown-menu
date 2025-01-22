@@ -1,9 +1,9 @@
 import "./global.css";
 import addMenuDropdown from "./menu";
 import "./carouselStyle.css";
-import carouselArrows from "./carouselDOM";
+import { carouselArrows, carouselDots } from "./carouselDOM";
+import { showSlides, autoSlide } from "./carousel";
 import { forEach } from "lodash";
-import { currentSlide } from "./carousel";
 
 const menuSelectorHead = document.querySelector("header p"); //adjust selector for name of menu element/header
 const menuItemsHead = document.querySelector("header .menu");
@@ -13,14 +13,8 @@ const menuItemsHead = document.querySelector("header .menu");
 addMenuDropdown(menuSelectorHead, menuItemsHead);
 // addMenuDropdown(menuSelectorFoot, menuItemsFoot);
 
+let slideIndex = 1;
 carouselArrows();
-
-const dotSelector = document.querySelectorAll(".dot");
-
-dotSelector.forEach((dot) => {
-  dot.addEventListener("click", (event) => {
-    const dotIndex = dot.getAttribute("data-index");
-    console.log(`Dot ${dotIndex} was clicked`);
-    currentSlide(dotIndex);
-  });
-});
+carouselDots();
+showSlides(slideIndex);
+autoSlide();

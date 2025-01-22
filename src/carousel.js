@@ -16,19 +16,26 @@ function showSlides(n) {
   let slides = document.getElementsByClassName("slideimage");
   let dots = document.getElementsByClassName("dot");
   if (n > slides.length) {
+    //go back to start
     slideIndex = 1;
   }
   if (n < 1) {
-    slideIndex = slides.length;
+    slideIndex = slides.length; //go to last slide
   }
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    slides[i].style.display = "none"; //hide all slides
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex - 1].style.display = "block";
+  slides[slideIndex - 1].style.display = "block"; //display active slide
   dots[slideIndex - 1].className += " active";
 }
 
-export { plusSlides, currentSlide, showSlides };
+function autoSlide() {
+  slideIndex++;
+  showSlides(slideIndex);
+  setTimeout(autoSlide, 2000);
+}
+
+export { plusSlides, currentSlide, showSlides, autoSlide };

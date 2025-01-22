@@ -1,4 +1,4 @@
-import { plusSlides } from "./carousel.js";
+import { plusSlides, currentSlide } from "./carousel.js";
 
 function carouselArrows() {
   const prevArrow = document.querySelector(".prev");
@@ -14,4 +14,16 @@ function carouselArrows() {
   });
 }
 
-export default carouselArrows;
+function carouselDots() {
+  const dotSelector = document.querySelectorAll(".dot");
+
+  dotSelector.forEach((dot) => {
+    dot.addEventListener("click", (event) => {
+      const dotIndex = dot.getAttribute("data-index");
+      console.log(`Dot ${dotIndex} was clicked`);
+      currentSlide(dotIndex);
+    });
+  });
+}
+
+export { carouselArrows, carouselDots };
