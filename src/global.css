@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .menu > li > a {
   color: black;
   text-decoration: none;
@@ -12,9 +16,9 @@
 }
 
 .content {
-  height: 500px;
+  /* height: 500px; */
   border: 2px red solid;
-  display: block;
+  /* display: block; */
   margin-top: 80px;
 }
 
