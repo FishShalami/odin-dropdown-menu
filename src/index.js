@@ -1,3 +1,11 @@
 import "./global.css";
+import addMenuDropdown from "./menu";
+import "./carouselStyle.css";
 
-console.log("Testing!");
+const menuSelectorHead = document.querySelector("header p"); //adjust selector for name of menu element/header
+const menuItemsHead = document.querySelector("header .menu");
+const menuSelectorFoot = document.querySelector("footer p"); //adjust selector for name of menu element/header
+const menuItemsFoot = document.querySelector("footer .menu");
+
+addMenuDropdown(menuSelectorHead, menuItemsHead);
+addMenuDropdown(menuSelectorFoot, menuItemsFoot);

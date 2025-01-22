@@ -8,4 +8,36 @@
   color: black;
   text-decoration: none;
   list-style-type: none;
+  line-height: 1.3rem;
+}
+
+.content {
+  height: 500px;
+  border: 2px red solid;
+  display: block;
+  margin-top: 80px;
+}
+
+.menu {
+  border: 2px black solid;
+  border-radius: 5px;
+  flex-direction: column;
+  width: fit-content;
+  padding: 15px;
+  display: none;
+  background-color: aliceblue;
+}
+
+header,
+footer {
+  position: absolute;
+}
+
+header .menu,
+footer .menu {
+  z-index: 1000;
+  position: relative;
+  /* top: 90px; */
+  display: none;
+  top: -15px;
 }

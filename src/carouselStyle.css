@@ -1,0 +1,20 @@
+.frame {
+  height: auto;
+  width: 90vw;
+}
+.slide-images {
+  border: solid black 5px;
+  position: relative;
+  height: 400px;
+}
+
+.slide-images img {
+  /* display: flex;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 30px; */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /* display: none; */
+}
